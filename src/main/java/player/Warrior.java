@@ -29,8 +29,11 @@ public class Warrior extends Player{
         this.armour = armour;
     }
 
-
     public void setWeapons(ArrayList<Weapon> weapons) {
         this.weapons = weapons;
+    }
+
+    public int getSizeOfWeaponBag(){
+        return weapons.size();
     }
 }

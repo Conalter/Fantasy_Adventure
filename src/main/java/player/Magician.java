@@ -13,7 +13,7 @@ public class Magician extends Player  {
     private int forceField;
     Protectable protectable;
 
-    public Magician(String name, int hitpoints, double backpack, ArrayList<Spell> spells, int forceField, Protectable protectable) {
+    public Magician(String name, int hitpoints, double backpack, ArrayList<Spell> spells, int forceField) {
         super(name, hitpoints, backpack);
         this.spells = spells;
         this.forceField = forceField;
@@ -38,5 +38,9 @@ public class Magician extends Player  {
 
     public void setSpells(ArrayList<Spell> spells) {
         this.spells = spells;
+    }
+
+    public int getSizeOfSpellbook(){
+        return spells.size();
     }
 }
