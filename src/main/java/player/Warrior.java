@@ -1,11 +1,11 @@
-package Player;
+package player;
 
 import java.util.ArrayList;
 
 public class Warrior extends Player{
 
     private int armour;
-        private ArrayList<Weapon> weapons;
+    private ArrayList<Weapon> weapons;
 
     public Warrior(String name, int hitpoints, double backpack, int armour, ArrayList<Weapon> weapons) {
         super(name, hitpoints, backpack);
