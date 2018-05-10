@@ -32,4 +32,16 @@ public class Room {
     public void setTreasure(ArrayList<Treasure> treasure) {
         this.treasure = treasure;
     }
+
+    public int getPlayersCount(){
+        return players.size();
+    }
+
+    public int getEnemiesCount(){
+        return enemies.size();
+    }
+
+    public int getTreasureCount(){
+        return treasure.size();
+    }
 }

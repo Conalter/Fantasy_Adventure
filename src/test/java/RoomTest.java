@@ -3,6 +3,7 @@ import dungeon.Treasure;
 import enemies.Balrog;
 import enemies.Enemy;
 import org.junit.Before;
+import org.junit.Test;
 import player.Cleric;
 import player.Magician;
 import player.Player;
@@ -12,6 +13,8 @@ import weapons.Spell;
 import weapons.Weapon;
 
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
 
 public class RoomTest {
 
@@ -62,7 +65,20 @@ public class RoomTest {
 
         room = new Room(players, enemies, treasures);
 
+    }
 
+    @Test
+    public void canGetNumberOfPlayers(){
+        assertEquals(3, room.getPlayersCount());
+    }
 
+    @Test
+    public void canGetNumberOfEnemies(){
+        assertEquals(1, room.getEnemiesCount());
+    }
+
+    @Test
+    public void canGetNumberOfTreasures(){
+        assertEquals(1, room.getTreasureCount());
     }
 }
