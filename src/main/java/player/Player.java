@@ -1,15 +1,19 @@
 package player;
 
+import weapons.Weapon;
+
 public abstract class Player {
 
     private String name;
     private int hitpoints;
     private double backpack;
+    Weapon weapon;
 
     public Player(String name, int hitpoints, double backpack) {
         this.name = name;
         this.hitpoints = hitpoints;
         this.backpack = backpack;
+        this.weapon = new Weapon("Axe", 30);
     }
 
     public String getName() {
@@ -35,4 +39,5 @@ public abstract class Player {
     public void setBackpack(double backpack) {
         this.backpack = backpack;
     }
+
 }

@@ -36,4 +36,8 @@ public class Warrior extends Player{
     public int getSizeOfWeaponBag(){
         return weapons.size();
     }
+
+    public int getWeaponDamagePoints(){
+        return weapon.getDamage();
+    }
 }

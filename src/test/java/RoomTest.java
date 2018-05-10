@@ -12,6 +12,7 @@ import weapons.HealingTool;
 import weapons.Spell;
 import weapons.Weapon;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -19,25 +20,30 @@ import static org.junit.Assert.assertEquals;
 public class RoomTest {
 
     Room room;
-    Player players;
-    Enemy enemies;
+    ArrayList<Player> players;
+    ArrayList<Enemy> enemies;
+    ArrayList<Treasure> treasures;
+    ArrayList<Weapon> weapons_holster;
+    ArrayList<Spell> spell_pouch;
+    ArrayList<HealingTool> healingTools;
     Warrior warrior;
     Magician magician;
     Cleric cleric;
     Balrog balrog;
     Treasure treasure;
     Weapon weapon;
+    Weapon weapon1;
     Spell spell;
     HealingTool healingTool;
 
     @Before
     public void before(){
-        ArrayList<Player> players = new ArrayList<>();
-        ArrayList<Enemy> enemies = new ArrayList<>();
-        ArrayList<Treasure> treasures = new ArrayList<>();
-        ArrayList<Weapon> weapons_holster = new ArrayList<>();
-        ArrayList<Spell> spell_pouch = new ArrayList<>();
-        ArrayList<HealingTool> healingTools = new ArrayList<>();
+        players = new ArrayList<>();
+        enemies = new ArrayList<>();
+        treasures = new ArrayList<>();
+        weapons_holster = new ArrayList<>();
+        spell_pouch = new ArrayList<>();
+        healingTools = new ArrayList<>();
 
         weapon = new Weapon("Warhammer", 40);
         weapons_holster.add(weapon);
@@ -56,8 +62,8 @@ public class RoomTest {
         treasure = new Treasure("Sceptre", 1000.00);
 
         players.add(warrior);
-        players.add(magician);
-        players.add(cleric);
+//        players.add(magician);
+//        players.add(cleric);
 
         enemies.add(balrog);
 
@@ -80,5 +86,16 @@ public class RoomTest {
     @Test
     public void canGetNumberOfTreasures(){
         assertEquals(1, room.getTreasureCount());
+    }
+
+    @Test
+    public void getWarriorWeaponDamage(){
+        weapons_holster.clear();
+        weapon1 = new Weapon("Club", 40);
+        weapons_holster.add(weapon1);
+//        assertEquals(40, warrior.getWeapons().get(0).getDamage());
+
+        assertEquals(40, room.getWarriorWeaponDamage());
+
     }
 }

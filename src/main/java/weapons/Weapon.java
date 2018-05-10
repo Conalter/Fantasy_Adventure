@@ -21,4 +21,8 @@ public class Weapon {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }

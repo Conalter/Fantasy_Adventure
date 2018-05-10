@@ -2,6 +2,7 @@ package dungeon;
 
 import enemies.Enemy;
 import player.Player;
+import player.Warrior;
 
 import java.util.ArrayList;
 
@@ -9,12 +10,12 @@ public class Room {
 
     private ArrayList<Player> players;
     private ArrayList<Enemy> enemies;
-    private ArrayList<Treasure> treasure;
+    private ArrayList<Treasure> treasures;
 
-    public Room(ArrayList<Player> players, ArrayList<Enemy> enemies, ArrayList<Treasure> treasure) {
-        this.players = players;
-        this.enemies = enemies;
-        this.treasure = treasure;
+    public Room(ArrayList<Player> players, ArrayList<Enemy> enemies, ArrayList<Treasure> treasures) {
+        this.players = new ArrayList<>(players);
+        this.enemies = new ArrayList<>(enemies);
+        this.treasures = new ArrayList<>(treasures);
     }
 
     public ArrayList<Player> getPlayers() {
@@ -26,11 +27,11 @@ public class Room {
     }
 
     public ArrayList<Treasure> getTreasure() {
-        return treasure;
+        return treasures;
     }
 
     public void setTreasure(ArrayList<Treasure> treasure) {
-        this.treasure = treasure;
+        this.treasures = treasure;
     }
 
     public int getPlayersCount(){
@@ -42,6 +43,14 @@ public class Room {
     }
 
     public int getTreasureCount(){
-        return treasure.size();
+        return treasures.size();
+    }
+
+    public int getWarriorWeaponDamage(){
+//        warrior.getWeapons().get(0).getDamage()
+        for (Player player : this.players){
+                return ((Warrior) player.getWeaponDamagePoints();
+        }
+        return 0;
     }
 }
