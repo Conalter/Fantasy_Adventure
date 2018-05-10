@@ -49,7 +49,8 @@ public class Room {
     public int getWarriorWeaponDamage(){
 //        warrior.getWeapons().get(0).getDamage()
         for (Player player : this.players){
-                return ((Warrior) player.getWeaponDamagePoints();
+            Warrior warrior = (Warrior) player;
+                return warrior.getWeaponDamagePoints();
         }
         return 0;
     }
