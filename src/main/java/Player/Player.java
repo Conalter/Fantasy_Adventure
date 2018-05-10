@@ -1,17 +1,15 @@
-public class Warrior {
+package Player;
+
+public abstract class Player {
 
     private String name;
     private int hitpoints;
-    private int armour;
     private double backpack;
-    private ArrayList<Weapon> weapons;
 
-    public Warrior(String name, int hitpoints, int armour, double backpack, ArrayList<Weapon> weapons) {
+    public Player(String name, int hitpoints, double backpack) {
         this.name = name;
         this.hitpoints = hitpoints;
-        this.armour = armour;
         this.backpack = backpack;
-        this.weapons = weapons;
     }
 
     public String getName() {
@@ -22,31 +20,19 @@ public class Warrior {
         return hitpoints;
     }
 
-    public int getArmour() {
-        return armour;
-    }
-
     public double getBackpack() {
         return backpack;
     }
 
-    public ArrayList<Weapon> getWeapons() {
-        return weapons;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setHitpoints(int hitpoints) {
         this.hitpoints = hitpoints;
     }
 
-    public void setArmour(int armour) {
-        this.armour = armour;
-    }
-
     public void setBackpack(double backpack) {
         this.backpack = backpack;
-    }
-
-    public void setWeapons(ArrayList<Weapon> weapons) {
-        this.weapons = weapons;
     }
 }
