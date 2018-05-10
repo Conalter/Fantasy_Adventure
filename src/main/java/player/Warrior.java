@@ -1,8 +1,12 @@
 package player;
 
+import weapons.Weapon;
+
 import java.util.ArrayList;
 
 public class Warrior extends Player{
+
+    Weapon weapon;
 
     private int armour;
     private ArrayList<Weapon> weapons;

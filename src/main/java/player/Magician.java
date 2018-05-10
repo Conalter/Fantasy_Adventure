@@ -1,10 +1,15 @@
 package player;
 
 import protect.Protectable;
+import weapons.Spell;
+
+import java.util.ArrayList;
 
 public class Magician extends Player  {
 
-    private  ArrayList<Spell> spells;
+    Spell spell;
+
+    private ArrayList<Spell> spells;
     private int forceField;
     Protectable protectable;
 
@@ -25,5 +30,13 @@ public class Magician extends Player  {
 
     public Protectable getProtectable() {
         return protectable;
+    }
+
+    public void setForceField(int forceField) {
+        this.forceField = forceField;
+    }
+
+    public void setSpells(ArrayList<Spell> spells) {
+        this.spells = spells;
     }
 }
